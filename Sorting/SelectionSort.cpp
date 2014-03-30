@@ -18,12 +18,12 @@ using namespace std;
 
 void SelectionSort(int arr[],int size)
 {
-	int currentIndex=0;
+
 	int min=numeric_limits<int>::max();
 	int minIndex=0;
 	for (int i = 0; i < size; i++)
 	{
-		for (int j = currentIndex; j < size ; j++)
+		for (int j = i; j < size ; j++)
 		{
 			if(arr[j]<min)
 			{
@@ -33,14 +33,14 @@ void SelectionSort(int arr[],int size)
 		}
 		//swap elements
 		int tmp=arr[minIndex];
-		arr[minIndex]=arr[currentIndex];
-		arr[currentIndex]=tmp;
-		currentIndex++;
-
+		arr[minIndex]=arr[i];
+		arr[i]=tmp;
+		min=numeric_limits<int>::max();
 	}
 	for (int i = 0; i < size; i++)
 	{
 		cout<<arr[i]<<" ";
 	}
+	cout<<endl;
 
 }
